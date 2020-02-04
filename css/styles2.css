@@ -1,0 +1,61 @@
+.main-container {
+    position: relative;
+    background: #ffffff;
+}
+
+.background_img {
+    position: absolute;
+    opacity: 0.2;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#phrase,
+#qwerty,
+#banner,
+#scoreboard {
+    z-index: 2;
+}
+/* #phrase {
+    background: #575757;
+} */
+
+#overlay {
+    z-index: 3;
+}
+
+.keyrow,
+ol{
+    background: #575757;
+    display: table;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.key {
+    background: #fafafafa;
+    box-shadow: 4px 5px 8px #000;
+}
+
+
+.letter {
+    box-shadow: 4px 5px 8px #000;
+}
+
+.wrong {
+    background: #54f5ff;
+}
+.chosen {
+    background: #3a3f58;
+    border-radius: 5px;
+    font-size: var(--font-size-medium);
+    color: #FFFFFF;
+  }
+  
+  .wrong {
+    background: #f7a964;
+    color: #FFFFFF;
+  }
+

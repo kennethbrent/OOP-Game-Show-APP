@@ -22,4 +22,20 @@ class Phrase {
 
        })
     }
+
+    checkLetter(guess){
+        const phraseArray = this.phrase.split('')
+        let match = phraseArray.includes(guess)
+        if(match){
+            this.showMatchedLetter(guess);
+            return true
+        } else {
+            return false
+        }
+    }
+
+    showMatchedLetter(guess){
+        $(`.${guess}`).removeClass('hide');
+        $(`.${guess}`).addClass('show');
+    }
 }
