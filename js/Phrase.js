@@ -6,6 +6,7 @@ class Phrase {
         this.phrase = phrase.toLowerCase()
     }
 
+    //Append phrase to display
     addPhraseToDisplay(){
        const phraseArray = this.phrase.split("");
        const phrase_container = $('#phrase ul')
@@ -22,18 +23,19 @@ class Phrase {
 
        })
     }
-
+    
+    //check if user guess is a match
     checkLetter(guess){
         const phraseArray = this.phrase.split('')
         let match = phraseArray.includes(guess)
         if(match){
-            this.showMatchedLetter(guess);
             return true
         } else {
             return false
         }
     }
-
+    
+    //show matched letter if guess is correct
     showMatchedLetter(guess){
         $(`.${guess}`).removeClass('hide');
         $(`.${guess}`).addClass('show');
