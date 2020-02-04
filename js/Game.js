@@ -28,7 +28,7 @@ class Game {
         const keys =  document.querySelectorAll('.key')
         const keysArray = Array.from(keys);
         keysArray.forEach((key)=>{
-            if(key.textContent == guess && !match){
+            if(key.textContent == guess && !match && !key.hasAttribute('disabled')){
                 $(key).addClass('wrong');
                 $(key).prop('disabled', true);
                 this.removeLife();
@@ -68,14 +68,16 @@ class Game {
             $('#overlay').removeClass('start');
             $('#overlay').removeClass('lose');
             $('#overlay').addClass('win');
-            $('#overlay h1').text('Great job!')
+            $('.title').text(`${this.activePhrase.phrase}! `);
+            $('#overlay h1').text('Great job! Play again')
             $('#overlay').show();
         }
         if(!win && this.missed == 5) {
             $('#overlay').removeClass('start');
             $('#overlay').removeClass('win');
             $('#overlay').addClass('lose');
-            $('#overlay h1').text('Oh no, better luck next time!')
+            $('.title').text(`The correct answer was ${this.activePhrase.phrase}! `);
+            $('#overlay h1').text('Better luck next time! Play again!')
             $('#overlay').show();
         }
     }
