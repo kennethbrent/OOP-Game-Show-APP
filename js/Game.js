@@ -5,7 +5,13 @@ class Game {
     //init class instance and set default values for phrases, missed, and activePhrase
     constructor(){
         this.missed = 0,
-        this.phrases = [{phrase: 'Iron Man'}, {phrase: 'Black Widow'}, {phrase:'Spiderman'}, {phrase: 'Thanos'}, {phrase: 'Doctor Strange'},{phrase: 'The Hulk'}, {phrase: 'Killmonger'},{phrase: 'Captain America'}]
+        this.phrases = [
+            new Phrase('Iron Man'),
+            new Phrase('Captain America'),
+            new Phrase('Black Widow'),
+            new Phrase('The Hulk'),
+            new Phrase('Thanos')
+        ]
         this.activePhrase = null
     }
     //select a random phrase from the phrases array
